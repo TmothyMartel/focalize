@@ -11,15 +11,19 @@
 <body>
 	<header role="banner" class="nav-bar">
 		<h1 class="logo">Focalize</h1>
-		<a href="/dashboard.html"  class="login-link"><img src="images/avatar.png" alt="silouette of person icon" class="login-icon"></a>
+		<img src="images/avatar.png" alt="silouette of person icon" class="login-icon">
 	</header><!-- /header -->
 	<main role="main" class="container">
-		<form class="login-form" action="" method="" accept-charset="utf-8">
-			<legend>Signup</legend>
+		<form class="login-form" action="login_submit" method="get" accept-charset="utf-8">
+            <legend>Signup</legend>
+            <label class="login-label">First name:</label>
+			<input class="login-input" type="text" name="firstname" value="">
+            <label class="login-label">Last name:</label>
+			<input class="login-input" type="text" name="" value="">
 			<label class="login-label">Username:</label>
-			<input id="user-name" class="login-input" type="text" name="username" value="">
+			<input class="login-input" type="text" name="" value="">
 			<label class="login-label">Password:</label>
-			<input id="password" class="login-input"type="text" name="password" value="">
+			<input class="login-input"type="text" name="" value="">
 			<button class="btn login-btn" type="submit">submit</button>
 		</form>
 		<div class="login-text">
@@ -31,10 +35,5 @@
 	<footer>
 		<p class="copyright">&copy;- Timothy Martel - 2018</p>
 	</footer>
-	<script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-	<script src="/js/login.js" type="text/javascript"></script>
 </body>
 </html>
