@@ -331,6 +331,10 @@ legend {
 	
 }
 
+.client-info {
+	display: none;
+}
+
 .create-input {
 	display: block;
 	width: 100%;
@@ -351,6 +355,12 @@ legend {
 	display: block;
 	margin: 15px 0;
 	font-size: 18px;
+}
+
+.paid-legend {
+	text-align: left;
+    padding-top: 20px;
+    font-size: 18px;
 }
 
 .create-opt-input {

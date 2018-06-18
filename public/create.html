@@ -94,13 +94,15 @@
 					<input class="create-input" type="text" name="notes">
 				</fieldset>
 				<fieldset>
-					<label class="create-label" for="">Is this a paid project?</label>
-					<label  for="">Yes:</label>
-					<input type="radio" name="paid">
+					<legend class="paid-legend">Is this a paid project?</legend>
+					<label for="radio">Yes:</label>
+					<input type="radio" id="yes" name="paid">
 					<label>No:</label>
-					<input type="radio" name="paid">
-					<label class="create-label">Client:<input class="client-input" type="text" name="" value=""></label>
-					<label class="create-label">Payment Amount:<input class="client-input" type="text" name="" value=""></label>
+					<input type="radio" id="no" name="paid">
+					<div class="client-info">
+						<label class="create-label">Client:<input class="client-input" type="text" name="" value=""></label>
+						<label class="create-label">Payment Amount:<input class="client-input" type="text" name="" value=""></label>
+					</div>
 				</fieldset>
 				<div class="btn-grid">
 					<button type="submit" class="btn submit-btn">Submit</button>
@@ -113,5 +115,9 @@
 	<footer>
 		<p class="copyright">&copy;- Timothy Martel - 2018</p>
 	</footer>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+ 		    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  		    crossorigin="anonymous"></script>
+	<script src="/js/index.js" type="text/javascript"></script>
 </body>
 </html>
