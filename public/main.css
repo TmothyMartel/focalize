@@ -14,7 +14,7 @@ fieldset {
 
 a {
 	text-decoration: none;
-	color: #9F5597;
+	color: #000;
 }
 
 ul {
@@ -30,11 +30,15 @@ ul {
     grid-template-columns: 3fr;
 }
 
-h1.logo {
+.logo-icon {
+	width: 40px;
+	vertical-align: middle;
+}
+
+.logo {
 	grid-column: 1;
 	font-family: 'Philosopher', sans-serif;
 	margin: 0;
-	padding-top: 7px;
 	padding-left: 10px;
 	color: #f6f6f6;
 	font-size: 20px;
@@ -43,9 +47,9 @@ h1.logo {
  .login-link {
  	grid-column: 3;
  }
-.login-icon {
 
-width: 35px;
+.login-icon {
+width: 40px;
 height: 40px;
 background-color: #CA7CC2;
 }
@@ -81,7 +85,8 @@ footer {
 
 .container {
 	min-height: 460px;
-	margin-bottom: 20px;
+	margin: 0 auto;
+	padding-bottom: 150px;
 }
 
 h2 {
@@ -137,9 +142,7 @@ F********************/
 .login-form {
 	width: 80%;
 	font-size: 18px;
-	margin-top: 50px;
-	margin-left: auto;
-	margin-right: auto;
+	margin: 80px auto;
 }
 
 .login-form legend {
@@ -151,7 +154,7 @@ F********************/
 .login-label, 
 .login-input {
 	display: block; 
-	margin: 8px 0;
+	margin: 20px 0;
 }
 
 .login-input {
@@ -171,6 +174,10 @@ F********************/
 	text-align: center;
 }
 
+.login-text a {
+	color: #9F5597;
+}
+
 .login-text p {
 	margin: 0;
 }
@@ -182,10 +189,9 @@ F********************/
 .project-card,
 .project-card-complete {
 	border: 1px solid #9F5597;
-	height: 100px;
 	margin: 15px 0;
 	display: grid;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 40% 60%;
     grid-gap: 2px;
 }
 
@@ -194,6 +200,8 @@ F********************/
 	padding: 10px;
 	height: auto;
 	grid-column: 1;
+	grid-row-start: 1;
+	grid-row-end: 3;
 }
 
 .project-text {
@@ -209,7 +217,12 @@ F********************/
 .due-date {
 	text-align: right;
 	font-size: 14px;
+	grid-row: 2;
 	padding-right: 5px;
+}
+
+.due-date p {
+	margin-bottom: 4px;
 }
 
 .project-card-complete {
@@ -217,6 +230,10 @@ F********************/
 	color: gray;
 }
 
+.sort-by {
+	grid-column: 3;
+
+}
 
 
 /*********************
@@ -330,7 +347,12 @@ legend {
 /*********************
 	MEDIA QUERIES
 *********************/
-
+@media screen and (min-width:450px) {
+	.project-card,
+	.project-card-complete {
+    	 grid-template-columns: 25% 75%;
+	}
+}
 
 @media screen and (min-width: 600px) {
 
@@ -343,7 +365,16 @@ legend {
         grid-template-rows: 100% repeat(2, 1fr);
         grid-template-columns: 50% 50%;
         grid-gap: 20px;
+        width: 90%;
     }
+
+    .login-form {
+		max-width: 450px;
+	}
+
+	.container {
+		max-width: 700px;
+	}
 
     .item-one {
     	grid-column-start: 1;
@@ -386,7 +417,24 @@ legend {
     	grid-column: 1;
     }
 
+    .project-card,
+	.project-card-complete {
+    	grid-template-columns: 20% 80%; 
+	}
+
 }
 
 
-@media screen and (min-width: 980px) {}
+@media screen and (min-width: 980px) {
+	.container {
+		max-width: 1000px;
+	}
+
+	.intro-wrapper {
+		width: 100%;
+	}
+
+	.wrapper {
+		width: 60%;
+	}
+}
