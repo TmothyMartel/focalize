@@ -37,6 +37,10 @@ ul {
 
 .logo {
 	grid-column: 1;
+	width: 125px;
+}
+
+.logo-style {
 	font-family: 'Philosopher', sans-serif;
 	margin: 0;
 	padding-left: 10px;
@@ -44,14 +48,30 @@ ul {
 	font-size: 20px;
 	text-shadow: 2px 2px 6px #000;
 }
+.sign-up-link {
+	grid-column: 2;
+	padding-top: 5px;
+    padding-right: 10px;
+}
+
+ .login {
+ 	grid-column: 3;
+ 	padding-top: 5px;
+    padding-right: 10px;
+ }
+
  .login-link {
  	grid-column: 3;
  }
 
 .login-icon {
-width: 40px;
-height: 40px;
-background-color: #CA7CC2;
+width: 28px;
+height: 28px;
+padding: 4px 8px;
+}
+
+.login-link:hover {
+	background-color: #CA7CC2;
 }
 
 .btn {
@@ -301,12 +321,13 @@ F********************/
   CREATE / UPDATE-VIEW STYLES
 F****************************/
 .create-form {
-	margin-top: 15px;
+	margin-top: 75px;
 }
 
 legend {
 	text-align: center;
 	font-size: 26px;
+	margin-bottom: 20px;
 	
 }
 
@@ -328,7 +349,7 @@ legend {
 
 .create-label {
 	display: block;
-	margin: 8px 0;
+	margin: 15px 0;
 	font-size: 18px;
 }
 
@@ -435,6 +456,6 @@ legend {
 	}
 
 	.wrapper {
-		width: 60%;
+		width: 500px;
 	}
 }
