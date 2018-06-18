@@ -250,6 +250,11 @@ F********************/
 	color: gray;
 }
 
+.project-card:hover {
+	border: 2px solid #CA7CC2; 
+	background-color: #E8E4E4;
+}
+
 .sort-by {
 	grid-column: 3;
 

@@ -1,7 +1,5 @@
 'use strict'
 
-$('.client-info').hide();
-
 function yesRadioEventHandler() {
 	$('#yes').on('change', function() {
 		$('.client-info').show();
