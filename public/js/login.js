@@ -7,18 +7,20 @@ function loginEventHandler() {
 		const password = $('#password').val();
 		$.ajax({
 			url: "/api/auth/login",
-			data: {
+			data: JSON.stringify({
 				username, 
 				password
-			},
+			}),
 			error: function(error) {
 				console.log('error', error);
 			},
 			success: function(data) {
-				console.log(data);
+				console.log(data.authToken);
 				localStorage.setItem('token', data.authToken);
+				location.replace('/dashboard.html');
 			},
-			type: 'POST'
+			type: 'POST',
+			contentType: 'application/json'
 		});
 	})
 }

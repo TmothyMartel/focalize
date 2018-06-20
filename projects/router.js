@@ -8,6 +8,11 @@ const router = express.Router();
 
 const jsonParser = bodyParser.json();
 
-app.get('/dashboard.html')
+const {Project} = require('./models')
+
+//routes
+router.get('/', jsonParser, (req, res) => {
+
+});
 
 module.exports = {router};
