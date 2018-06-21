@@ -20,17 +20,28 @@ const ProjectSchema = mongoose.Schema({
     type: String, 
     required: true
   },
-  additionalNotes: {type: String},
+  additionalNotes: [String],
   paidProject: { type: Boolean},
   client: {type: String},
-  paymentAmount: {type: Number}
+  paymentAmount: {type: Number},
+  completed: {
+    type: Boolean,
+    default: false
+  }
 });
 
 ProjectSchema.methods.serialize = function() {
   return {
-    username: this.username || '',
-    firstName: this.firstName || '',
-    lastName: this.lastName || ''
+    id: this._id,
+    title: this.title,
+    dueDate: this.dueDate || Date.now(),
+    imageUrl: this.imageUrl|| '',
+    description: this.description,
+    additionalNotes: this.additionalNotes,
+    paidProject: this.paidProject,
+    client: this.client,
+    paymentAmount: this.paymentAmount,
+    completed: this.complete
   };
 };
 
@@ -42,6 +53,6 @@ ProjectSchema.statics.hashPassword = function(password) {
   return bcrypt.hash(password, 10);
 };
 
-const Project = mongoose.model('Project', ProjectSchema);
+const Projects = mongoose.model('Project', ProjectSchema);
 
-module.exports = {Project};
+module.exports = {Projects};
