@@ -21,9 +21,15 @@ const ProjectSchema = mongoose.Schema({
     required: true
   },
   additionalNotes: [String],
-  paidProject: { type: Boolean},
+  paidProject: { 
+    type: Boolean,
+    default: false
+  },
   client: {type: String},
-  paymentAmount: {type: Number},
+  paymentAmount: {
+    type: Number,
+    default: 0
+   },
   completed: {
     type: Boolean,
     default: false
@@ -41,7 +47,7 @@ ProjectSchema.methods.serialize = function() {
     paidProject: this.paidProject,
     client: this.client,
     paymentAmount: this.paymentAmount,
-    completed: this.complete
+    completed: this.completed
   };
 };
 

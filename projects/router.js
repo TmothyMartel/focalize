@@ -8,36 +8,34 @@ const jsonParser = bodyParser.json();
 
 const { Projects } = require('./models');
 
-const { seedProjects } = require('./seed');
 
-Projects.create
+
 
 //routes
 router.get('/', (req, res) => {
-	res.json(seedProjects);
-	// Projects
-	// .find()
-	// .limit(10)
-	// .then( projects => {
-	// 	res.json({
-	// 		projects: projects.map((project) => project.serialize());
-	// 	});
-	// })
-	// .catch(error => {
-	// 	console.error(error);
-	// 	res.status(500).json({ message: 'internal server error'});
-	// });
+	Projects
+	.find()
+	.limit(10)
+	.then( projects => {
+		res.json({
+			projects: projects.map((project) => project.serialize())
+		});
+	})
+	.catch(error => {
+		console.error(error);
+		res.status(500).json({ message: 'internal server error'});
+	});
 });
 
-//router.get('/:id', (req, res) => {
-	// Projects
-	//   .findById(req.params.id)
-	//   .then(project => res.json(project.serialize()))
-	//   .catch(error => {
-	//   	console.error(error);
-	//   	res.status.json({ message: "internal server error"});
-	//   });
-//});
+router.get('/:id', (req, res) => {
+	Projects
+	  .findById(req.params.id)
+	  .then(project => res.json(project.serialize()))
+	  .catch(error => {
+	  	console.error(error);
+	  	res.status.json({ message: "internal server error"});
+	  });
+});
 
 // post route
 router.post('/', jsonParser, (req, res) => {
@@ -79,7 +77,7 @@ router.put('/:id', jsonParser, (req, res) => {
 	}
 
 	const toUpdate = {};
-	const updateFields = ['title', 'content', 'author'];
+	const updateFields = ['title', 'dueDate', 'imageUrl', 'description', 'additionalNotes'];
 
 	updateFields.forEach(field => {
 		if (field in req.body) {
