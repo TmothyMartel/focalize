@@ -8,7 +8,6 @@ const ProjectSchema = mongoose.Schema({
   title: {
     type: String,
     required: true,
-    unique: true
   },
   dueDate: {
     type: Date,
@@ -33,7 +32,11 @@ const ProjectSchema = mongoose.Schema({
   completed: {
     type: Boolean,
     default: false
-  }
+  },
+  user: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User'
+        }
 });
 
 ProjectSchema.methods.serialize = function() {

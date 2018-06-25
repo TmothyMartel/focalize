@@ -1,24 +1,6 @@
 'use strict'
 
-const projects = [
-	
-	{
-		title: "Photoshoot in Central Park",
-		dueDate: "July 8, 2018"
-	},
-	{
-		title: "Hudson Wedding",
-		dueDate: "July 18, 2018"
-	},
-	{
-		title: "Brooklyn Bridge",
-		dueDate: "August 3, 2018"
-	},
-	{
-		title: "Photoshoot in Prospect Park",
-		dueDate: "August 8, 2018"
-	},
-]
+
 
 function getProjects() {
 	$.ajax({
@@ -29,6 +11,9 @@ function getProjects() {
 			success: function(data) {
 				console.log(data);
 				displayProjectsList(data.projects);
+			},
+			headers: {
+				'Authorization': 'Bearer ' + authToken
 			},
 			type: 'GET',
 			contentType: 'application/json'

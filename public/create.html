@@ -19,11 +19,11 @@
 				<fieldset>
 					<legend>Create a Project</legend>
 					<label class="create-label" for="">Title:</label>
-					<input class="create-input" type="text" name="title">
+					<input class="create-input" id="title" type="text" name="title">
 
 					<label class="create-label" for="">Due Date:</label>
-					<select class="create-opt-input">
-						<optgroup label="Month:">
+					<select id="month" class="create-opt-input">
+						<optgroup  label="Month:">
 							<option value="january">January</option>
 							<option value="february">February</option>
 							<option value="march">March</option>
@@ -38,7 +38,7 @@
 							<option value="december">December</option>
 						</optgroup>
 					</select>
-					<select class="create-opt-input">		
+					<select id="day" class="create-opt-input">		
 						<optgroup label="Day:">
 							<option value="1">1</option>
 							<option value="2">2</option>
@@ -73,7 +73,7 @@
 							<option value="31">31</option>
 						</optgroup>
 					</select>
-					<select class="create-opt-input">
+					<select id="year" class="create-opt-input">
 						<optgroup label="Year:">
 							<option value="2017">2017</option>
 							<option value="2018">2018</option>
@@ -86,12 +86,12 @@
 						</optgroup>
 					</select>
 					<label class="create-label">Image url: (optional):</label>
-					<input class="create-input" type="text" name="" value="">
+					<input id="image" class="create-input" type="text" name="" value="">
 
 					<label class="create-label" for="">Description:</label>
-					<input class="create-input" type="text" name="description">
+					<input id="description" class="create-input" type="text" name="description">
 					<label class="create-label" for="">Additional Notes:</label>
-					<input class="create-input" type="text" name="notes">
+					<input id="notes" class="create-input" type="text" name="notes">
 				</fieldset>
 				<fieldset>
 					<legend class="paid-legend">Is this a paid project?</legend>
@@ -100,8 +100,8 @@
 					<label>No:</label>
 					<input type="radio" id="no" name="paid">
 					<div class="client-info">
-						<label class="create-label">Client:<input class="client-input" type="text" name="" value=""></label>
-						<label class="create-label">Payment Amount:<input class="client-input" type="text" name="" value=""></label>
+						<label class="create-label">Client:<input id="client" class="client-input" type="text" name="client" value=""></label>
+						<label class="create-label">Payment Amount:<input id="amount" class="client-input" type="text" name="" value=""></label>
 					</div>
 				</fieldset>
 				<div class="btn-grid">
@@ -118,6 +118,6 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
  		    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   		    crossorigin="anonymous"></script>
-	<script src="/js/index.js" type="text/javascript"></script>
+  	<script src="/js/create.js" type="text/javascript"></script>
 </body>
 </html>

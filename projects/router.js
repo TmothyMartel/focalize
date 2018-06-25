@@ -1,20 +1,19 @@
 'use strict';
 const express = require('express');
 const bodyParser = require('body-parser');
-
+const passport = require('passport');
 const router = express.Router();
 
 const jsonParser = bodyParser.json();
 
 const { Projects } = require('./models');
 
-
-
+const jwtAuth = passport.authenticate('jwt', { session: false });
 
 //routes
-router.get('/', (req, res) => {
+router.get('/', jwtAuth, (req, res) => {
 	Projects
-	.find()
+	.find({user:req.user.id})
 	.limit(10)
 	.then( projects => {
 		res.json({
@@ -38,7 +37,7 @@ router.get('/:id', (req, res) => {
 });
 
 // post route
-router.post('/', jsonParser, (req, res) => {
+router.post('/', jwtAuth, jsonParser, (req, res) => {
 	const requiredFields = ['title', 'description', 'dueDate'];
 	requiredFields.forEach( field =>{
 		if (!(field in req.body)) {
@@ -50,6 +49,7 @@ router.post('/', jsonParser, (req, res) => {
 
 	Projects
 		.create({
+			user: req.user.id,
 			title: req.body.title,
 			dueDate: req.body.dueDate,
 			imageUrl: req.body.imageUrl,
