@@ -1,7 +1,6 @@
 'use strict'
 
 
-
 function getProjects() {
 	$.ajax({
 			url: "/api/projects",
@@ -33,13 +32,11 @@ function displayProjectsList(array) {
 	}); 		
 }
 
-
-
-
+//<a href="/project.html" class="project-link"></a>
 function projectsRender(project) {
 	return `
 		<li>
-			<a href="/project.html" class="project-link"><div class="${project.completed ? 'project-card-complete' : 'project-card'}">
+			<div class="${project.completed ? 'project-card-complete' : 'project-card'} project-link">
 				<div class="project-icon">
 					<img  src="images/${project.completed ? 'complete-planning.svg' : 'planning.svg'}" alt="project icon">
 				</div>
@@ -50,28 +47,13 @@ function projectsRender(project) {
 					<p >Due: ${project.dueDate}</p>
 				</div>
 			</div>
-			</a>
 		</li>
 	`
 }
 
 
-function yesRadioEventHandler() {
-	$('#yes').on('change', function() {
-		$('.client-info').show();
-	});
-}
-
-function noRadioEventHandler() {
-	$('#no').on('change', function() {
-		$('.client-info').hide();
-	});
-}
 
 function handler() {
-	//displayProjectsList(projects);
-	yesRadioEventHandler();
-	noRadioEventHandler();
 	getProjects();
 }
 

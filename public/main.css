@@ -95,7 +95,6 @@ footer {
     text-align: center;
     color: #f6f6f6;
     background-color: #9F5597;
-    position: fixed;
     bottom: 0;
     width: 100%;
 }
@@ -116,9 +115,14 @@ h2 {
 	text-align: center;
 }
 
+.single-wrapper,
 .wrapper {
 	width: 80%;
     margin: 0 auto;
+}
+
+.single-wrapper {
+	display: none;
 }
 
 .btn-grid {
