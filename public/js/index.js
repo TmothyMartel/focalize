@@ -29,14 +29,15 @@ function displayProjectsList(array) {
 		} else {
 			$('#display-projects').append(renderedProject);
 		}
-	}); 		
+	}); 
+		
 }
 
-//<a href="/project.html" class="project-link"></a>
+
 function projectsRender(project) {
 	return `
 		<li>
-			<div class="${project.completed ? 'project-card-complete' : 'project-card'} project-link">
+			<div class="${project.completed ? 'project-card-complete' : 'project-card'} project-link" data-id="${project.id}">
 				<div class="project-icon">
 					<img  src="images/${project.completed ? 'complete-planning.svg' : 'planning.svg'}" alt="project icon">
 				</div>
@@ -51,10 +52,19 @@ function projectsRender(project) {
 	`
 }
 
+function linkEventListener() {
+	$('.wrapper').on('click', '.project-link', event => {
+		let projectId = $(event.currentTarget).attr('data-id');
+		location.replace('/project.html?projectId=' + projectId);
+	});
+}
+
+
 
 
 function handler() {
 	getProjects();
+	linkEventListener();
 }
 
 $(handler);

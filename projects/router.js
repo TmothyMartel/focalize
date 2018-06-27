@@ -26,7 +26,7 @@ router.get('/', jwtAuth, (req, res) => {
 	});
 });
 
-router.get('S/:id', (req, res) => {
+router.get('/:id', (req, res) => {
 	Projects
 	  .findById(req.params.id)
 	  .then(project => res.json(project.serialize()))

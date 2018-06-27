@@ -1,26 +1,26 @@
 'use strict'
 
+let projectId;
 
 function getSingleProject() {
+	let searchParams = new URLSearchParams(window.location.search)
+	projectId = searchParams.get('projectId')
+   	console.log(projectId)
 	$.ajax({
-			url: "/api/projects/:id",
+			url: `/api/projects/${projectId}`,
 			error: function(error) {
 				console.log('error', error);
 			},
 			success: function(data) {
-				console.log(data);
-				displaySingleProject(data.project.id);
+				let renderedProject = singleProjectRender(data);
+				$('.project-display').html(renderedProject);
 			},
 			headers: {
 				'Authorization': 'Bearer ' + authToken
 			},
 			type: 'GET',
 			contentType: 'application/json'
-		});
-}
-
-function displaySingleProject(project) {
-	$('.wrapper').html(singleProjectRender(project)); 		
+		});  
 }
 
 function singleProjectRender(project) {
@@ -28,7 +28,7 @@ function singleProjectRender(project) {
 		<h2 class="title">${project.title}</h2>
 			<article class="project-grid">
 				<div class="project-info">
-					<img src="images/${project.image}" class="project-img" alt="project image">
+					<img src="images/${project.image ? project.image : "planning.svg"}" class="project-img" alt="project image">
 					<ul>
 						<li>Due: ${project.dueDate}</li>
 						<li>Client: ${project.client ? project.client : "N/A"}</li>
@@ -45,4 +45,36 @@ function singleProjectRender(project) {
 	`
 }
 
-$(getSingleProject);
+function deleteEventListener() {
+	$('.delete-btn').on('click', event => {
+		event.preventDefault();
+		$.ajax({
+			url: `/api/projects/${projectId}`,
+			error: function(error) {
+				console.log('error', error);
+			},
+			success: function(data) {
+				location.replace('/dashboard.html')
+			},
+			headers: {
+				'Authorization': 'Bearer ' + authToken
+			},
+			type: 'delete',
+			contentType: 'application/json'
+		});  
+	})
+}
+
+function updateEventListener() {
+	$('.edit-btn').on('click', event =>{
+		location.replace('/create.html?projectId=' + projectId);
+	})
+}
+
+
+
+$( function() {
+	getSingleProject();
+	deleteEventListener();
+	updateEventListener();
+});
