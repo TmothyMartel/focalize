@@ -1,43 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="focalize" content="a project managing app">
-	<title></title>
-	<link href="https://fonts.googleapis.com/css?family=Philosopher:700|Roboto" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="main.css">
-</head>
-<body>
-	<header role="banner" class="nav-bar">
-		<a href="/" class="logo logo-style" title="focalize"><img  class="logo-icon" src="images/tree-logo.png" alt="">Focalize</a>
-	</header><!-- /header -->
-	<main role="main" class="container">
-		<form id="signup" class="login-form" action="" method="" accept-charset="utf-8">
-            <legend>Signup</legend>
-            <label class="login-label">First name:</label>
-			<input class="login-input" id="firstName" type="text" name="firstname" value="">
-            <label class="login-label">Last name:</label>
-			<input class="login-input" id="lastName" type="text" name="" value="">
-			<label class="login-label" >Username:</label>
-			<input class="login-input" id="username" type="text" name="" value="" required>
-			<label class="login-label">Password:</label>
-			<input class="login-input" id="password" type="password" name="" value="" required>
-			<div class="error-message"></div>
-			<button class="btn login-btn" type="submit">Sign Up</button>
-		</form>
-		<div class="login-text">
-			<p>Already have an account?</p>
-			<a href="/login.html" title="">Login</a>
-		</div>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="focalize" content="a project managing app">
+		<title></title>
+		<link href="https://fonts.googleapis.com/css?family=Philosopher:700|Roboto" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="main.css">
+	</head>
+	<body>
+		<header role="banner" class="nav-bar">
+			<a href="/" class="logo logo-style" title="focalize"><img  class="logo-icon" src="images/tree-logo.png" alt="">Focalize</a>
+		</header>
+		<!-- /header -->
+		<main role="main" class="container">
+			<section class="wrapper">
+				<form id="signup" class="login-form" action="" method="" accept-charset="utf-8">
+					<legend>Signup</legend>
+					<label class="login-label">First name:</label>
+					<input class="login-input" id="firstName" type="text" name="firstname" value="">
+					<label class="login-label">Last name:</label>
+					<input class="login-input" id="lastName" type="text" name="" value="">
+					<label class="login-label">Username:</label>
+					<input class="login-input" id="username" type="text" name="" value="" required>
+					<label class="login-label">Password:</label>
+					<input class="login-input" id="password" type="password" name="" value="" required>
+					<div class="error-message"></div>
+					<button class="btn login-btn" type="submit">Sign Up</button>
+				</form>
+				<div class="login-text">
+					<p>Already have an account?</p>
+					<a href="/login.html" title="">Login</a>
+				</div>
+			</section>
+			<footer>
+			<p class="copyright">&copy;- Timothy Martel - 2018</p>
+			</footer>
+		</main>
 		
-	</main>
-	<footer>
-		<p class="copyright">&copy;- Timothy Martel - 2018</p>
-	</footer>
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
- 		    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  		    crossorigin="anonymous"></script>
-	<script src="/js/signup.js" type="text/javascript"></script>
-</body>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+				integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		crossorigin="anonymous"></script>
+		<!-- <script src="/js/jquery-3.3.1.min.js" type="text/javascript"></script> -->
+		<script src="/js/signup.js" type="text/javascript"></script>
+	</body>
 </html>

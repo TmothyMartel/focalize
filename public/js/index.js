@@ -39,7 +39,7 @@ function projectsRender(project) {
 		<li>
 			<div class="${project.completed ? 'project-card-complete' : 'project-card'} project-link" data-id="${project.id}">
 				<div class="project-icon">
-					<img  src="images/${project.completed ? 'complete-planning.svg' : 'planning.svg'}" alt="project icon">
+					<img  class="project-icon" src="${project.completed ? 'images/complete-planning.svg' : project.imageUrl }" alt="project icon">
 				</div>
 				<div class="project-text"> 
 					<p class="project-title">${project.title}</p>

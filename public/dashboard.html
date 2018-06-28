@@ -1,47 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="focalize" content="a project managing app">
-	<title></title>
-	<link href="https://fonts.googleapis.com/css?family=Philosopher:700|Roboto" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="main.css">
-</head>
-<body>
-	<header role="banner" class="nav-bar">
-		<a href="/" class="logo logo-style" title="focalize"><img  class="logo-icon" src="images/tree-logo.png" alt="">Focalize</a>
-		<!-- <a href="/dashboard.html"  class="login-link"><img src="images/avatar.png" alt="silouette of person icon" class="login-icon"></a> -->
-		<a href="/dashboard.html" class="login logo-style">Dashboard</a>
-	</header><!-- /header -->
-	<main role="main" class="container">
-		<section class="wrapper">
-			<h2>Pending Projects</h2>
-			<div class="btn-grid">
-			<a href="/create.html"><button id="create" class="btn create-btn" >create</button></a>
-			<select class="sort-by">
- 				 <option value="date">Date</option>
- 				 <option value="title">Title</option>
-			 </select>
-			</div>
-			<ul id="display-projects">
-			</ul>
-			<h2>Completed Projects</h2>
-			<ul id="display-completed-projects">
-			</ul>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="focalize" content="a project managing app">
+		<title></title>
+		<link href="https://fonts.googleapis.com/css?family=Philosopher:700|Roboto" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="main.css">
+	</head>
+	<body>
+		<header role="banner" class="nav-bar">
+			<a href="/" class="logo logo-style" title="focalize"><img  class="logo-icon" src="images/tree-logo.png" alt="">Focalize</a>
+			<!-- <a href="/dashboard.html"  class="login-link"><img src="images/avatar.png" alt="silouette of person icon" class="login-icon"></a> -->
+			<a href="/dashboard.html" class="dashboard logo-style">Dashboard</a>
+			<a class="logout logo-style">logout</a>
+			</header><!-- /header -->
+			<main role="main" class="container">
+				<section class="wrapper">
+					<h2>Pending Projects</h2>
+					<div class="btn-grid">
+						<a href="/create.html"><button id="create" class="btn create-btn" >create</button></a>
+						<select class="sort-by">
+							<option value="date">Date</option>
+							<option value="title">Title</option>
+						</select>
+					</div>
+					<ul id="display-projects">
+					</ul>
+					<h2>Completed Projects</h2>
+					<ul id="display-completed-projects">
+					</ul>
+					
+				</div>
+			</section>
 			
-			</div>
-		</section>
-		<section class="single-wrapper"></section>
-	</main>
-	<footer>
-		<p class="copyright">&copy;- Timothy Martel - 2018</p>
-	</footer>
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
- 		    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  		    crossorigin="anonymous"></script>
-  	<script src="/js/authentication.js" type="text/javascript"></script>
-	<script src="/js/index.js" type="text/javascript"></script>
-	
-</body>
+			<footer>
+				<p class="copyright">&copy;- Timothy Martel - 2018</p>
+			</footer>
+		</main>
+		
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		crossorigin="anonymous"></script>
+		<!-- <script src="/js/jquery-3.3.1.min.js" type="text/javascript"></script> -->
+		<script src="/js/authentication.js" type="text/javascript"></script>
+		<script src="/js/index.js" type="text/javascript"></script>
+		
+	</body>
 </html>

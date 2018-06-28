@@ -14,7 +14,8 @@ const ProjectSchema = mongoose.Schema({
     default: Date.now(),
     required: true
   },
-  imageUrl: {type: String},
+  imageUrl: {type: String,
+    default: 'images/planning.svg'},
   description: {
     type: String, 
     required: true

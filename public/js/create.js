@@ -1,7 +1,7 @@
 'use strict'
 
 let projectId;
-
+let paidProject = false;
 let updateId;
 
 function getProject() {
@@ -46,21 +46,22 @@ function createProject() {
         let dateString = `${month} ${day}, ${year}`;
         let title = $('#title').val(),
         dueDate = dateString,
-        image = $('#image').val(),
+        imageUrl = $('#image').val(),
         description = $('#description').val(),
         additionalNotes = $('#notes').val(),
         client = $('#client').val(),
-        amount = $('#amount').val();
+        paymentAmount = $('#amount').val();
         let settings = {
             url: "/api/projects",
             data: JSON.stringify({
                 title,
                 dueDate,
-                image,
+                imageUrl,
                 description,
                 additionalNotes,
+                paidProject,
                 client,
-                amount,
+                paymentAmount,
                 id : updateId 
             }),
             error: function(error) {
@@ -90,23 +91,35 @@ function radioHandlers () {
 
 function yesRadioEventHandler() {
     $('#yes').on('change', function() {
-    	paidProject = true
         $('.client-info').show();
+        console.log($('#yes').val())
+         paidProject = true;
+         console.log(paidProject);
     });
 }
 
 function noRadioEventHandler() {
     $('#no').on('change', function() {
-    	paidProject = false;
         $('.client-info').hide();
+        paidProject = false;
+        console.log(paidProject);
     });
 }
 
+function findOutIfPaid() {
+    radioHandlers();
+    // if ($('#yes').val() === 'on') {
+
+    //  } else {
+    //     paidProject = false;
+    //  }
+   
+}
+
 function handler() {
-	yesRadioEventHandler();
-	noRadioEventHandler();
     createProject();
     getProject();
+    findOutIfPaid();
 
 }
 

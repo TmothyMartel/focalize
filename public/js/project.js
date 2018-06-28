@@ -14,6 +14,7 @@ function getSingleProject() {
 			success: function(data) {
 				let renderedProject = singleProjectRender(data);
 				$('.project-display').html(renderedProject);
+				console.log(data);
 			},
 			headers: {
 				'Authorization': 'Bearer ' + authToken
@@ -28,7 +29,7 @@ function singleProjectRender(project) {
 		<h2 class="title">${project.title}</h2>
 			<article class="project-grid">
 				<div class="project-info">
-					<img src="images/${project.image ? project.image : "planning.svg"}" class="project-img" alt="project image">
+					<img src="${project.imageUrl ? project.imageUrl : "images/planning.svg"}" class="project-img" alt="project image">
 					<ul>
 						<li>Due: ${project.dueDate}</li>
 						<li>Client: ${project.client ? project.client : "N/A"}</li>
