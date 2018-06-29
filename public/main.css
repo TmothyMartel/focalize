@@ -315,6 +315,10 @@ F********************/
 	padding: 10px;
 }
 
+.titles {
+	margin-top: 0;
+}
+
 .project-info ul {
 	grid-column: 2;
 	margin: 0;
@@ -341,13 +345,49 @@ F********************/
 	grid-column: 2;
 }
 
-.delete-btn {
+.modal {
+	display: none;
+	position: fixed;
+	box-shadow: 1px -1px 20px;
+    max-width: 700px;
+	width: 80%;
+    top: 40%;
+    border: 1px solid #000000;
+    text-align: center;
+    z-index: 1;
+    background-color: rgb(232, 228, 228);
+}
+
+.warning {
+	background-color: rgb(159, 85, 151);
+	letter-spacing: 1px;
+    margin: 0;
+    color: #f6f6f6;
+    padding: 10px;
+    font-size: 18px
+}
+
+.modal-btn {
 	grid-column: 3;
 	border-color: red;
 	width: 80px;
 	color: red;
 }
 
+.delete-btn {
+	display: inline;
+	border-color: red;
+	width: 80px;
+	margin-right: 30px;
+	margin-bottom: 20px;
+	color: red;
+}
+
+.close-btn {
+	display: inline;
+	margin-bottom: 20px;
+    margin-left: 30px;
+}
 
 /*****************************
   CREATE / UPDATE-VIEW STYLES
@@ -389,10 +429,15 @@ legend {
 	font-size: 18px;
 }
 
-.paid-legend {
+.paid-legend,
+.complete-legend {
 	text-align: left;
     padding-top: 20px;
     font-size: 18px;
+}
+
+.is-completed {
+	margin-bottom: 15px;
 }
 
 .create-opt-input {

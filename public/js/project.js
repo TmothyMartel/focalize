@@ -37,13 +37,29 @@ function singleProjectRender(project) {
 					</ul>
 				</div>
 				<div class="description card">
+				<h3 class="titles">About:</h3>
 					<p>${project.description}</p>
 				</div>
 				<div class="notes card">
+				<h3 class="titles">Notes or special instructions:</h3>
 					<p>${project.additionalNotes}</p>
 				</div>
 			</article>
 	`
+}
+
+function modalEventListener() {
+	$('.modal-btn').on('click', event => {
+		event.preventDefault();
+		$('.modal').show();
+	});
+}
+
+function closeModal() {
+	$('.close-btn').on('click', event => {
+		event.preventDefault();
+		$('.modal').hide();
+	})
 }
 
 function deleteEventListener() {
@@ -78,4 +94,6 @@ $( function() {
 	getSingleProject();
 	deleteEventListener();
 	updateEventListener();
+	modalEventListener();
+	closeModal();
 });

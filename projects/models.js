@@ -40,11 +40,15 @@ const ProjectSchema = mongoose.Schema({
         }
 });
 
+// ProjectSchema.virtual('dateString').get(function() {
+//   return `${this.dueDate}.toDateString()`;
+// });
+
 ProjectSchema.methods.serialize = function() {
   return {
     id: this._id,
     title: this.title,
-    dueDate: this.dueDate || Date.now(),
+    dueDate: this.dueDate.toDateString() || Date.now().toDateString(),
     imageUrl: this.imageUrl|| '',
     description: this.description,
     additionalNotes: this.additionalNotes,
@@ -54,6 +58,8 @@ ProjectSchema.methods.serialize = function() {
     completed: this.completed
   };
 };
+
+
 
 ProjectSchema.methods.validatePassword = function(password) {
   return bcrypt.compare(password, this.password);

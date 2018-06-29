@@ -77,7 +77,7 @@ router.put('/:id', jsonParser, (req, res) => {
 	}
 
 	const toUpdate = {};
-	const updateFields = ['title', 'dueDate', 'imageUrl', 'description', 'additionalNotes'];
+	const updateFields = ['title', 'dueDate', 'imageUrl', 'description', 'additionalNotes', 'paidProject', 'completed'];
 
 	updateFields.forEach(field => {
 		if (field in req.body) {

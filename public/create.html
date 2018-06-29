@@ -19,7 +19,7 @@
 						<fieldset>
 							<legend>Create a Project</legend>
 							<label class="create-label" for="">Title:</label>
-							<input class="create-input" id="title" type="text" name="title">
+							<input class="create-input" id="title" type="text" name="title" required>
 							<label class="create-label" for="">Due Date:</label>
 							<select id="month" class="create-opt-input">
 								<optgroup  label="Month:">
@@ -87,7 +87,7 @@
 							<label class="create-label">Image url: (optional):</label>
 							<input id="image" class="create-input" type="text" name="" value="">
 							<label class="create-label" for="">Description:</label>
-							<textarea id="description" class="create-input" type="text" name="description"></textarea>
+							<textarea id="description" class="create-input" type="text" name="description" required></textarea>
 							<label class="create-label" for="">Additional Notes:</label>
 							<textarea id="notes" class="create-input" type="text" name="notes"></textarea>
 						</fieldset>
@@ -102,6 +102,7 @@
 								<label class="create-label">Payment Amount:<input id="amount" class="client-input" type="text" name="" value=""></label>
 							</div>
 						</fieldset>
+						<fieldset class="is-completed"></fieldset>
 						<div class="error-message"></div>
 						<div class="btn-grid">
 							<button type="submit" class="btn submit-btn">Submit</button>

@@ -3,6 +3,7 @@
 let projectId;
 let paidProject = false;
 let updateId;
+let completed;
 
 function getProject() {
     let searchParams = new URLSearchParams(window.location.search)
@@ -15,9 +16,9 @@ function getProject() {
                 console.log('error', error);
             },
             success: function(data) {
-             console.log(data)
              updateId = projectId;
              populateFields(data);
+             completeQuestionHandler();
          },
          headers: {
             'Authorization': 'Bearer ' + authToken
@@ -32,9 +33,35 @@ function populateFields(project) {
    $('#title').val(project.title);
    $('#description').val(project.description);
    $('#notes').val(project.additionalNotes);
+   $('.is-completed').html(completedQuestionRender());
+   console.log(project);
 }
 
+function completedQuestionRender() {
+    return ` 
+        <legend class="complete-legend">Have you completed this project?</legend>
+        <label for="radio">Yes:</label>
+        <input type="radio" id="complete" name="complete">
+        <label>No:</label>
+        <input type="radio" id="incomplete" name="complete">`
+}
 
+function completeQuestionHandler() {
+     markComplete();
+     markIncomplete();
+}
+
+function markComplete() {
+    $('#complete').on('change', function() {
+         completed = true;
+    });
+}
+
+function markIncomplete() {
+    $('#incomplete').on('change', function() {
+         completed = false;
+    });
+}
 
 function createProject() {
     $('.create-form').on('submit', event => {
@@ -62,8 +89,11 @@ function createProject() {
                 paidProject,
                 client,
                 paymentAmount,
-                id : updateId 
+                completed,
+                id : updateId, 
+                
             }),
+
             error: function(error) {
                 console.log('error', error);
             },
@@ -92,9 +122,7 @@ function radioHandlers () {
 function yesRadioEventHandler() {
     $('#yes').on('change', function() {
         $('.client-info').show();
-        console.log($('#yes').val())
          paidProject = true;
-         console.log(paidProject);
     });
 }
 
@@ -102,24 +130,15 @@ function noRadioEventHandler() {
     $('#no').on('change', function() {
         $('.client-info').hide();
         paidProject = false;
-        console.log(paidProject);
     });
 }
 
-function findOutIfPaid() {
-    radioHandlers();
-    // if ($('#yes').val() === 'on') {
 
-    //  } else {
-    //     paidProject = false;
-    //  }
-   
-}
 
 function handler() {
     createProject();
     getProject();
-    findOutIfPaid();
+    radioHandlers();
 
 }
 
