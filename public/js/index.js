@@ -1,5 +1,8 @@
 'use strict'
 
+let state = {
+	projects: []
+}
 
 function getProjects() {
 	$.ajax({
@@ -8,7 +11,7 @@ function getProjects() {
 				console.log('error', error);
 			},
 			success: function(data) {
-				console.log(data);
+				state.projects = data.projects;
 				displayProjectsList(data.projects);
 			},
 			headers: {
@@ -33,6 +36,15 @@ function displayProjectsList(array) {
 		
 }
 
+function sortByEventListener() {
+	$('.sort-by').on('change', event => {
+		let sortedProjects = state.projects.slice();
+		sortedProjects.sort(function(a, b) {
+			return a.dueDate - b.dueDate;
+		});
+		displayProjectsList(sortedProjects);
+	})
+}
 
 function projectsRender(project) {
 	return `
@@ -65,6 +77,7 @@ function linkEventListener() {
 function handler() {
 	getProjects();
 	linkEventListener();
+	sortByEventListener();
 }
 
 $(handler);
