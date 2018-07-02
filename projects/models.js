@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
 
+const imagePath = "images/planning.svg"
+
 const ProjectSchema = mongoose.Schema({
   title: {
     type: String,
@@ -14,8 +16,9 @@ const ProjectSchema = mongoose.Schema({
     default: Date.now(),
     required: true
   },
-  imageUrl: {type: String,
-    default: 'images/planning.svg'},
+  imageUrl: {
+    type: String,
+    default: imagePath },
   description: {
     type: String, 
     required: true
@@ -40,7 +43,7 @@ const ProjectSchema = mongoose.Schema({
         }
 });
 
-// ProjectSchema.virtual('dateString').get(function() {
+// ProjectSchema.virtual('defaultImage').get(function() {
 //   return `${this.dueDate}.toDateString()`;
 // });
 
@@ -49,7 +52,7 @@ ProjectSchema.methods.serialize = function() {
     id: this._id,
     title: this.title,
     dueDate: this.dueDate.toDateString() || Date.now().toDateString(),
-    imageUrl: this.imageUrl|| '',
+    imageUrl: this.imageUrl || imagePath,
     description: this.description,
     additionalNotes: this.additionalNotes,
     paidProject: this.paidProject,

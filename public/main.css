@@ -138,13 +138,12 @@ h2 {
     margin: 0 auto;
 }
 
-
-
 .btn-grid {
 	display: grid;
 	margin-top: 15px;
     grid-template-columns: auto 1fr auto;
 }
+	
 
 /*********************
   SPLASH PAGE STYLES
@@ -237,7 +236,7 @@ F********************/
 	border: 1px solid #9F5597;
 	margin: 15px 0;
 	display: grid;
-    grid-template-columns: 38% 60%;
+   /*  grid-template-columns: 38% 60%; */
     grid-gap: 2px;
 }
 
@@ -257,7 +256,7 @@ F********************/
 
 .project-title {
 	font-size: 18px;
-	
+	padding-left: 5px;	
 }
 
 .due-date {
@@ -455,10 +454,18 @@ legend {
 /*********************
 	MEDIA QUERIES
 *********************/
+@media screen and (min-width:420px) {
+	.project-card,
+	.project-card-complete {
+		grid-template-columns: 38% 60%;
+	}
+}
+
+
 @media screen and (min-width:450px) {
 	.project-card,
 	.project-card-complete {
-    	 grid-template-columns: 25% 75%;
+    	 grid-template-columns: 30% 70%;
 	}
 }
 
