@@ -6,6 +6,8 @@ if (!authToken) {
 	location.replace('/login.html');
 }
 
+// to log out just need to remove token.
+
 // function logoutHandler() {
 // 	$('.logout').on('click' event => {
 // 		event.preventDefault();
