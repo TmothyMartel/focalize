@@ -1,5 +1,10 @@
 'use strict'
 
+
+if (!authToken) {
+	location.replace('/login.html');
+}
+
 let state = {
 	projects: []
 }

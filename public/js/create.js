@@ -5,6 +5,11 @@ let paidProject = false;
 let updateId;
 let completed;
 
+
+if (!authToken) {
+    location.replace('/login.html');
+}
+
 function getProject() {
     let searchParams = new URLSearchParams(window.location.search)
     projectId = searchParams.get('projectId');

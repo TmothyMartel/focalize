@@ -2,6 +2,11 @@
 
 let projectId;
 
+
+if (!authToken) {
+	location.replace('/login.html');
+}
+
 function getSingleProject() {
 	let searchParams = new URLSearchParams(window.location.search)
 	projectId = searchParams.get('projectId')

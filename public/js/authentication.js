@@ -2,10 +2,7 @@
 
 let authToken = localStorage.getItem('token');
 
-// if (!authToken) {
-// 	location.replace('/login.html');
-// }
-
+// checks if user is logged in or not to desplay the proper nav links
 if (!authToken) {
 	$('.login-nav').append(loggedOutRender);
 } else {
@@ -39,7 +36,3 @@ function logoutHandler() {
 
 $(logoutHandler);
 
-// app.get('/logout', function(req, res){
-//   req.logout();
-//   res.redirect('/');
-// });
