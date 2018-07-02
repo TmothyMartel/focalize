@@ -1,4 +1,11 @@
 language: node_js
 node_js: node
 services:
-  - mongodb
+- mongodb
+deploy:
+  provider: heroku
+  api_key:
+    secure: UYICWBZs+ycHwwK867fw6TipfSNZaTG6mbM1ZX1xIW2UlnPSFM0qqkTfGM4NxxrBMrikanIY0CVWzudHy3ks9Wku5BBjKabg+fgeK0j5J2nRwbRl6IC05SNoE2+w24Pt4Lnb8DF8eUwwstEiBvXzlPTIZdTrsRfzhnxW9NhbBmNmOme3ZF5Z9O4ZO99y5oMvPMQajHFMceQFP7W5+JWctKPe1nof4Z3uCCvJng3SlVbtBoA4ZWOg9BbmccrvHO99ZH+f2wB8Z7r8RlyiiSD1Eao9hQjC/ElsPcoZNRYdWxRecMOI7yCIJ/8ES40PrYbNwDjUKgjtmiNBDBAxtt4rV49m38uEZ5yQyy1Deo36M8cDCZppe31Z7UDXK8fnRK8zwA3FMbg0u3wD1s8vW5m+0Z5YoiRfHxFo5/iGmwn8KEH06ZTR+ePDtmsl15Rw3BASVtqQyQTHTUais3lF13KRVh64PQc386OYEKJOyA9BXmYeXPc0QdY/PqOUpQn+2Ky/oq6JGszTbpFBaMozMlVfQj9yo/q9/w1MQQq5Hs4Da3TM2OOUIc0i1UMJXNNrVp2obnnMgynrJcrBxbClOVRnPfF+lAD0FxKC0GpZ8p4I4/l7SbkM6eTIMmmINoPpJ98JJhTXa8NSST+eW9mKAkKNxs7PfWihlK9iRFJ7xG5DE48=
+  app: morning-anchorage-81133
+  on:
+    repo: TmothyMartel/focalize
