@@ -43,10 +43,14 @@ function displayProjectsList(array) {
 
 function sortByEventListener() {
 	$('.sort-by').on('change', event => {
-		let sortedProjects = state.projects.slice();
+		let sortedProjects = state.projects.slice('');
+		//sortedProjects.sort();
 		sortedProjects.sort(function(a, b) {
-			return a.dueDate - b.dueDate;
+			console.log(a);
+			console.log(b);
+			return  b.title - a.title;
 		});
+		//console.log(sortedProjects);
 		displayProjectsList(sortedProjects);
 	})
 }
