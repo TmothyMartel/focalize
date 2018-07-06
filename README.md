@@ -1,7 +1,7 @@
 # Focalize
 
 
-[BookFriend](https://tmothymartel.github.io/focalize/) 
+[Focalize](https://tmothymartel.github.io/focalize/) 
 
 
 
