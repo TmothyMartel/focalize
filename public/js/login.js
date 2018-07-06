@@ -12,9 +12,9 @@ function loginEventHandler() {
 				password
 			}),
 			error: function(error) {
-				let errorLocation = error.responseJSON.location;
-				let errorMessage = error.responseJSON.message;
-				$('.error-message').html(`Oops! ${errorLocation}: ${errorMessage}`);
+				// let errorLocation = error.responseJSON.location;
+				// let errorMessage = error.responseJSON.message;
+				// $('.error-message').html(`Oops! ${errorLocation}: ${errorMessage}`);
 				console.log('error', error);
 			},
 			success: function(data) {
