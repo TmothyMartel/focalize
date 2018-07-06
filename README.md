@@ -1,7 +1,7 @@
 # Focalize
 
 
-[Focalize](https://tmothymartel.github.io/focalize/) 
+[Focalize](https://morning-anchorage-81133.herokuapp.com/) 
 
 
 
