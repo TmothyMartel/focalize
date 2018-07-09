@@ -143,6 +143,13 @@ h2 {
 	margin-top: 15px;
     grid-template-columns: auto 1fr auto;
 }
+
+.error-message {
+	color: red;
+	font-weight: bold;
+	font-size: 20px;
+	text-align: center;
+}
 	
 
 /*********************

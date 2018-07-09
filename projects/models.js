@@ -43,15 +43,19 @@ const ProjectSchema = mongoose.Schema({
         }
 });
 
-// ProjectSchema.virtual('defaultImage').get(function() {
-//   return `${this.dueDate}.toDateString()`;
-// });
+ProjectSchema.virtual('dateString').get(function() {
+  let date = this.dueDate.toString();
+  let formatDate = date.split(' ');
+  return `${formatDate[1]} ${formatDate[2]} ${formatDate[3]} `
+});
+
 
 ProjectSchema.methods.serialize = function() {
   return {
     id: this._id,
     title: this.title,
-    dueDate: this.dueDate.toDateString() || Date.now().toDateString(),
+    //dueDate: this.dueDate.toDateString() || Date.now().toDateString(),
+    dueDate: this.dateString,
     imageUrl: this.imageUrl || imagePath,
     description: this.description,
     additionalNotes: this.additionalNotes,

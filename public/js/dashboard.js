@@ -13,6 +13,8 @@ function getProjects() {
 	$.ajax({
 			url: "/api/projects",
 			error: function(error) {
+				let errorMessage = error.responseJSON.message;
+				$('.error-message').html(`Oops! ${errorMessage}`);
 				console.log('error', error);
 			},
 			success: function(data) {
