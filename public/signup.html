@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="focalize" content="a project managing app">
-		<title></title>
+		<title>Focalize</title>
 		<link href="https://fonts.googleapis.com/css?family=Philosopher:700|Roboto" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="main.css">
 	</head>
@@ -17,14 +17,14 @@
 			<section class="wrapper">
 				<form id="signup" class="login-form" action="" method="" accept-charset="utf-8">
 					<legend>Signup</legend>
-					<label class="login-label">First name:</label>
-					<input class="login-input" id="firstName" type="text" name="firstname" value="">
-					<label class="login-label">Last name:</label>
-					<input class="login-input" id="lastName" type="text" name="" value="">
-					<label class="login-label">Username:</label>
-					<input class="login-input" id="username" type="text" name="" value="" required>
-					<label class="login-label">Password:</label>
-					<input class="login-input" id="password" type="password" name="" value="" required>
+					<label class="login-label" for="firstname">First name:</label>
+					<input class="login-input" id="firstName" type="text" name="firstname">
+					<label class="login-label" for="lastname">Last name:</label>
+					<input class="login-input" id="lastName" type="text" name="lastname" value="">
+					<label class="login-label" for="username">Username:</label>
+					<input class="login-input" id="username" type="text" name="username" required>
+					<label class="login-label" for="password">Password:</label>
+					<input class="login-input" id="password" type="password" name="password" required>
 					<div class="error-message"></div>
 					<button class="btn login-btn" type="submit">Sign Up</button>
 				</form>
