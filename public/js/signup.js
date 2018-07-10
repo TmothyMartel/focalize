@@ -3,8 +3,8 @@
 function signupHandler() {
 	$('#signup').on('submit', function(event) {
 		event.preventDefault();
-		const firstName = $('#firstName').val();
-		const lastName = $('#lastName').val();
+		const firstName = $('#firstname').val();
+		const lastName = $('#lastname').val();
 		const username = $('#username').val();
 		const password = $('#password').val();
 		console.log(username, password, firstName, lastName);
