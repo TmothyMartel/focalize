@@ -36,7 +36,7 @@ function getProject() {
 
 function populateFields(project) {
    $('#title').val(project.title);
-   $('#date').val(project.dueDate);
+   $('#datepicker').val(project.dueDate);
    $('#description').val(project.description);
    $('#notes').val(project.additionalNotes);
    $('.is-completed').html(completedQuestionRender());
@@ -95,7 +95,7 @@ function createProject() {
         // let dateString = `${month} ${day}, ${year}`;
      //$('#date').val();
         let title = $('#title').val(),
-        dueDate = $('#date').val(),
+        dueDate = $('#datepicker').val(),
         imageUrl = $('#image').val(),
         description = $('#description').val(),
         additionalNotes = $('#notes').val(),
