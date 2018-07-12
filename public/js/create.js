@@ -35,9 +35,8 @@ function getProject() {
 }
 
 function populateFields(project) {
-   let dueDate = reverseDate(project)
    $('#title').val(project.title);
-   $('#date').val(dueDate);
+   $('#date').val(project.dueDate);
    $('#description').val(project.description);
    $('#notes').val(project.additionalNotes);
    $('.is-completed').html(completedQuestionRender());
@@ -71,17 +70,19 @@ function markIncomplete() {
     });
 }
 
-function dateSelection() {
-    $('#date').on('change', date => {
-      date = $('#date').val();
-      console.log(date)
-    });
+// function dateSelection() {
+//     $('#date').on('change', date => {
+//       date = $('#date').val();
+//       console.log(date)
+//     });
    
-}
+// }
 
-function reverseDate(data) {
-    let formatDate = data.dueDate; 
-    return formatDate;
+function dateSelection() {
+  $( "#datepicker" ).datepicker({
+    gotoCurrent: true
+  });
+
 }
 
 function createProject() {
