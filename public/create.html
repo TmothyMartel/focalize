@@ -26,24 +26,24 @@
 							<label class="create-label" for="datepicker">Due Date:</label>
 							<input class="create-opt-input" type="text" id="datepicker" required>
 
-							<label class="create-label">Image url: (optional):</label>
-							<input id="image" class="create-input" type="text" name="" value="">
+							<label class="create-label" for="image">Image url: (optional):</label>
+							<input id="image" class="create-input" type="text" name="image">
 
 							<label class="create-label" for="description">Description:</label>
 							<textarea id="description" class="create-text-input" type="text" name="description" rows="8" cols="50" required></textarea>
 
-							<label class="create-label" for="">Additional Notes:</label>
+							<label class="create-label" for="notes">Additional Notes:</label>
 							<textarea id="notes" class="create-text-input" type="text" rows="8" cols="50" name="notes"></textarea>
 						</fieldset>
 						<fieldset>
 							<legend class="paid-legend">Is this a paid project?</legend>
 
-							<label for="radio">Yes:</label>
+							<label for="yes">Yes:</label>
 							<input type="radio" id="yes" name="paid">
 
-							<label>No:</label>
+							<label for="no">No:</label>
 							<input type="radio" id="no" name="paid" checked>
-							
+
 							<div class="client-info">
 								<label class="create-label">Client:<input id="client" class="client-input" type="text" name="client" value=""></label>
 								<label class="create-label" for="amount">Payment Amount($):<input id="amount" class="client-input" type="number" name="amount" ></label>

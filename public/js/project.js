@@ -38,7 +38,7 @@ function singleProjectRender(project) {
 					<ul>
 						<li>Due: ${project.dueDate}</li>
 						<li>Client: ${project.client ? project.client : "N/A"}</li>
-						<li>Payment: ${project.paymentAmount}</li>
+						<li>Payment: $${project.paymentAmount}</li>
 					</ul>
 				</div>
 				<div class="description card">

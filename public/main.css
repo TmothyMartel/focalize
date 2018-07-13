@@ -375,9 +375,9 @@ F********************/
 
 .modal-btn {
 	grid-column: 3;
-	border-color: red;
+	border-color: #b50808;
 	width: 80px;
-	color: red;
+	color: #b50808;
 }
 
 .delete-btn {
