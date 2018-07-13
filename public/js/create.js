@@ -70,13 +70,6 @@ function markIncomplete() {
     });
 }
 
-// function dateSelection() {
-//     $('#date').on('change', date => {
-//       date = $('#date').val();
-//       console.log(date)
-//     });
-   
-// }
 
 function dateSelection() {
   $( "#datepicker" ).datepicker({
@@ -89,11 +82,6 @@ function createProject() {
     $('.create-form').on('submit', event => {
         event.preventDefault();
         
-        // let month = $('#month').val();
-        // let day = $('#day').val();
-        // let year = $('#year').val();
-        // let dateString = `${month} ${day}, ${year}`;
-     //$('#date').val();
         let title = $('#title').val(),
         dueDate = $('#datepicker').val(),
         imageUrl = $('#image').val(),

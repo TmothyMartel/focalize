@@ -19,17 +19,17 @@
 					<form class="create-form" method="POST" accept-charset="utf-8">
 						<fieldset>
 							<legend>Create a Project</legend>
-							<label class="create-label" for="">Title:</label>
+							<label class="create-label" for="title">Title:</label>
 							<input class="create-input" id="title" type="text" name="title" required>
-							<label class="create-label" for="">Due Date:</label>
+							<label class="create-label" for="datepicker">Due Date:</label>
 							<!-- <input class="create-opt-input" id="date" type="date" name="date-selector" required> -->
 							<input class="create-opt-input" type="text" id="datepicker" required>
 							<label class="create-label">Image url: (optional):</label>
 							<input id="image" class="create-input" type="text" name="" value="">
-							<label class="create-label" for="">Description:</label>
-							<textarea id="description" class="create-input" type="text" name="description" rows="8" cols="50" required></textarea>
+							<label class="create-label" for="description">Description:</label>
+							<textarea id="description" class="create-text-input" type="text" name="description" rows="8" cols="50" required></textarea>
 							<label class="create-label" for="">Additional Notes:</label>
-							<textarea id="notes" class="create-input" type="text" rows="8" cols="50" name="notes"></textarea>
+							<textarea id="notes" class="create-text-input" type="text" rows="8" cols="50" name="notes"></textarea>
 						</fieldset>
 						<fieldset>
 							<legend class="paid-legend">Is this a paid project?</legend>
@@ -39,7 +39,7 @@
 							<input type="radio" id="no" name="paid" checked>
 							<div class="client-info">
 								<label class="create-label">Client:<input id="client" class="client-input" type="text" name="client" value=""></label>
-								<label class="create-label">Payment Amount:<input id="amount" class="client-input" type="text" name="" value=""></label>
+								<label class="create-label" for="amount">Payment Amount($):<input id="amount" class="client-input" type="number" name="amount" ></label>
 							</div>
 						</fieldset>
 						<fieldset class="is-completed"></fieldset>

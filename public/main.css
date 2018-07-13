@@ -421,6 +421,13 @@ legend {
 	border: 1px solid #9F5597;
 }	
 
+.create-text-input {
+	display: block;
+	width: 100%;
+	margin: 10px 0;
+	border: 1px solid #9F5597;
+}
+
 .client-input {
 	display: block;
 	width: 40%;
