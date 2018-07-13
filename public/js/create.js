@@ -36,9 +36,11 @@ function getProject() {
 
 function populateFields(project) {
    $('#title').val(project.title);
+   $('#datepicker').val(project.dueDate);
    $('#description').val(project.description);
    $('#notes').val(project.additionalNotes);
    $('.is-completed').html(completedQuestionRender());
+   if(!project.paidProject){$('#no').attr('checked')}
    console.log(project);
 }
 
@@ -48,7 +50,7 @@ function completedQuestionRender() {
         <label for="radio">Yes:</label>
         <input type="radio" id="complete" name="complete">
         <label>No:</label>
-        <input type="radio" id="incomplete" name="complete">`
+        <input type="radio" id="incomplete" name="complete" checked>`
 }
 
 function completeQuestionHandler() {
@@ -68,16 +70,20 @@ function markIncomplete() {
     });
 }
 
+
+function dateSelection() {
+  $( "#datepicker" ).datepicker({
+    gotoCurrent: true
+  });
+
+}
+
 function createProject() {
     $('.create-form').on('submit', event => {
         event.preventDefault();
         
-        let month = $('#month').val();
-        let day = $('#day').val();
-        let year = $('#year').val();
-        let dateString = `${month} ${day}, ${year}`;
         let title = $('#title').val(),
-        dueDate = dateString,
+        dueDate = $('#datepicker').val(),
         imageUrl = $('#image').val(),
         description = $('#description').val(),
         additionalNotes = $('#notes').val(),
@@ -100,6 +106,8 @@ function createProject() {
             }),
 
             error: function(error) {
+                let errorMessage = error.responseJSON.message;
+                $('.error-message').html(`Oops! ${errorMessage}`);
                 console.log('error', error);
             },
             headers: {
@@ -144,6 +152,7 @@ function handler() {
     createProject();
     getProject();
     radioHandlers();
+    dateSelection();
 
 }
 
