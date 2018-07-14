@@ -23,7 +23,7 @@ const ProjectSchema = mongoose.Schema({
     type: String, 
     required: true
   },
-  additionalNotes: {String},
+  additionalNotes: String,
   paidProject: { 
     type: Boolean,
     default: false
