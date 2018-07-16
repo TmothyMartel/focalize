@@ -175,7 +175,7 @@ F********************/
 }
 
 .item {
-	margin: 0 auto;	
+	margin: 10px auto;	
 }
 
 .item h3 {
@@ -256,6 +256,10 @@ F********************/
 	grid-row-end: 3;
 }
 
+.project-list {
+	border-top: 2px #9f5597 solid;
+}
+
 .project-text {
 	grid-column: 2;
 	padding-right: 2px;
@@ -315,10 +319,19 @@ F********************/
 	grid-column: 1;
 }
 
+.project-item {
+	margin-bottom: 5px;
+}
+
 .card {
 	background-color: #E8E4E4;
 	margin: 20px 0;
 	padding: 10px;
+	min-height: 150px;
+}
+
+.title {
+	text-transform: capitalize;
 }
 
 .titles {

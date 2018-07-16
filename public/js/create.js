@@ -34,6 +34,7 @@ function getProject() {
     }  
 }
 
+// populates the input field when updating
 function populateFields(project) {
    $('#title').val(project.title);
    $('#datepicker').val(project.dueDate);
@@ -46,6 +47,7 @@ function populateFields(project) {
     project.completed ?  $('#complete').attr('checked', 'checked') : $('#incomplete').attr('checked', 'checked')
 }
 
+// renders option to make a project complete. only shows when updating a project
 function completedQuestionRender() {
     return ` 
         <legend class="complete-legend">Have you completed this project?</legend>
@@ -55,6 +57,7 @@ function completedQuestionRender() {
         <input type="radio" id="incomplete" name="complete">`
 }
 
+//handler for marking a project complete
 function completeQuestionHandler() {
      markComplete();
      markIncomplete();
@@ -72,6 +75,7 @@ function markIncomplete() {
     });
 }
 
+//function for date picture
 function dateSelection() {
   $( "#datepicker" ).datepicker({
     gotoCurrent: true
@@ -79,6 +83,7 @@ function dateSelection() {
 
 }
 
+//ajax post and put requests
 function createProject() {
     $('.create-form').on('submit', event => {
         event.preventDefault();

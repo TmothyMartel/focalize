@@ -9,6 +9,7 @@ let state = {
 	projects: []
 }
 
+//ajax request for project list
 function getProjects() {
 	$.ajax({
 		url: "/api/projects",
@@ -27,6 +28,7 @@ function getProjects() {
 	});
 }
 
+//to display the array of projects on the page
 function displayProjectsList(array) {
 	$('#display-projects').html('');
 	$('#display-completed-projects').html('');
@@ -41,25 +43,26 @@ function displayProjectsList(array) {
 
 }
 
-
+// render function for project list item
 function projectsRender(project) {
 	return `
 	<li>
-	<div class="${project.completed ? 'project-card-complete' : 'project-card'} project-link" data-id="${project.id}">
-	<div class="project-icon">
-	<img  class="project-icon" src="${project.completed ? 'images/complete-planning.svg' : project.imageUrl }" alt="project icon">
-	</div>
-	<div class="project-text"> 
-	<p class="project-title">${project.title}</p>
-	</div>
-	<div class="due-date">
-	<p >Due: ${project.dueDate}</p>
-	</div>
-	</div>
+		<div class="${project.completed ? 'project-card-complete' : 'project-card'} project-link" data-id="${project.id}">
+			<div class="project-icon">
+				<img  class="project-icon" src="${project.completed ? 'images/complete-planning.svg' : project.imageUrl }" alt="project icon">
+			</div>
+			<div class="project-text"> 
+				<p class="project-title">${project.title}</p>
+			</div>
+			<div class="due-date">
+				<p >Due: ${project.dueDate}</p>
+			</div>
+		</div>
 	</li>
 	`
 }
 
+// event listener to take user to individual project
 function linkEventListener() {
 	$('.wrapper').on('click', '.project-link', event => {
 		let projectId = $(event.currentTarget).attr('data-id');

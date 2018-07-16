@@ -2,11 +2,12 @@
 
 let projectId;
 
-
+//check if user has auth token
 if (!authToken) {
 	location.replace('/login.html');
 }
 
+// get a single project from the DB
 function getSingleProject() {
 	let searchParams = new URLSearchParams(window.location.search)
 	projectId = searchParams.get('projectId')
@@ -28,6 +29,7 @@ function getSingleProject() {
 		});  
 }
 
+// renders the project on the page
 function singleProjectRender(project) {
 	return `
 		<h2 class="title">${project.title}</h2>
@@ -35,9 +37,9 @@ function singleProjectRender(project) {
 				<div class="project-info">
 					<img src="${project.imageUrl ? project.imageUrl : "images/planning.svg"}" class="project-img" alt="project image">
 					<ul>
-						<li>Due: ${project.dueDate}</li>
-						<li>Client: ${project.client ? project.client : "N/A"}</li>
-						<li>Payment: $${project.paymentAmount}</li>
+						<li class="project-item"><strong>Due:</strong> ${project.dueDate}</li>
+						<li class="project-item"><strong>Client:</strong> ${project.client ? project.client : "N/A"}</li>
+						<li class="project-item"><strong>Payment:</strong> $${project.paymentAmount}</li>
 					</ul>
 				</div>
 				<div class="description card">
@@ -52,6 +54,7 @@ function singleProjectRender(project) {
 	`
 }
 
+//event listener for delete project modal
 function modalEventListener() {
 	$('.modal-btn').on('click', event => {
 		event.preventDefault();
@@ -66,6 +69,7 @@ function closeModal() {
 	})
 }
 
+//ajax request to delete a project
 function deleteEventListener() {
 	$('.delete-btn').on('click', event => {
 		event.preventDefault();

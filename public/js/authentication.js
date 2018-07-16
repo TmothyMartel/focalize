@@ -9,14 +9,14 @@ if (!authToken) {
 	$('.login-nav').append(loggedInRender);
 }
 
-
+// displays signup/ login on navbar if user signed out
 function loggedOutRender() {
 	return `
 		<a href="/signup.html" class="sign-up-link logo-style" >Sign up</a>
 		<a href="/login.html" class="login logo-style">login</a>
 	`
 }
-
+// displays dashboard  and logout links on navbar
 function loggedInRender() {
 	return `
 		<a href="/dashboard.html" class="dashboard logo-style">Dashboard</a>
