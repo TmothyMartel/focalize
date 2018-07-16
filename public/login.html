@@ -13,9 +13,9 @@
 			<a href="/" class="logo logo-style" title="focalize"><img  class="logo-icon" src="images/tree-logo.png" alt="">Focalize</a>
 			</header><!-- /header -->
 			<main role="main" class="container">
-				<section class="wrapper">
+				<section role="region" class="wrapper">
 
-					<form class="login-form" action="" method="" accept-charset="utf-8">
+					<form class="login-form" aria-live="polite" accept-charset="utf-8">
 						<legend>Login</legend>
 
 						<label class="login-label" for="user-name">Username:</label>
@@ -24,7 +24,7 @@
 						<label class="login-label" for="password">Password:</label>
 						<input id="password" class="login-input"type="password" name="password" required>
 
-						<div class="error-message"></div>
+						<div class="error-message" aria-live="assertive"></div>
 						<button class="btn login-btn" type="submit">submit</button>
 					</form>
 					<div class="login-text">
@@ -36,15 +36,14 @@
 						<a href="/signup.html" title="">Sign Up</a>
 					</div>
 				</section>
-				<footer>
-					<p class="copyright">&copy;- Timothy Martel - 2018</p>
+				<footer role="contentinfo">
+					<p class="copyright" >&copy;- Timothy Martel - 2018</p>
 				</footer>
 			</main>
 			
 			<script src="https://code.jquery.com/jquery-3.3.1.min.js"
 				integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 			crossorigin="anonymous"></script>
-			<!-- <script src="/js/jquery-3.3.1.min.js" type="text/javascript"></script> -->
 			<script src="/js/login.js" type="text/javascript"></script>
 		</body>
 	</html>

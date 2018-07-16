@@ -15,8 +15,8 @@
 			
 			</header><!-- /header -->
 			<main role="main" class="container">
-				<section class="wrapper">
-					<form class="create-form" method="POST" accept-charset="utf-8">
+				<section role="region" class="wrapper">
+					<form class="create-form" method="POST" aria-live="polite" accept-charset="utf-8">
 						<fieldset>
 							<legend>Create a Project</legend>
 
@@ -42,15 +42,15 @@
 							<input type="radio" id="yes" name="paid">
 
 							<label for="no">No:</label>
-							<input type="radio" id="no" name="paid" checked>
+							<input type="radio" id="no" name="paid">
 
 							<div class="client-info">
 								<label class="create-label">Client:<input id="client" class="client-input" type="text" name="client" value=""></label>
-								<label class="create-label" for="amount">Payment Amount($):<input id="amount" class="client-input" type="number" name="amount" ></label>
+								<label class="create-label" for="amount">Payment Amount($):<input id="amount" class="client-input" type="number" name="paymentAmount" ></label>
 							</div>
 						</fieldset>
-						<fieldset class="is-completed"></fieldset>
-						<div class="error-message"></div>
+						<fieldset class="is-completed" aria-live="polite"></fieldset>
+						<div class="error-message" aria-live="assertive"></div>
 						<div class="btn-grid">
 							<button type="submit" class="btn submit-btn">Submit</button>
 							<a href="/dashboard.html" class="back-btn"><button class="btn">Go Back</button></a>
@@ -59,7 +59,7 @@
 					
 				</section>
 				<footer>
-					<p class="copyright">&copy;- Timothy Martel - 2018</p>
+					<p class="copyright" role="contentinfo">&copy;- Timothy Martel - 2018</p>
 				</footer>
 			</main>
 			

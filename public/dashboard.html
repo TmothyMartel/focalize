@@ -14,21 +14,18 @@
 			</header><!-- /header -->
 			<main role="main" class="container">
 				<section class="wrapper">
+					<h1 class="user"></h1>
 					<h2>Pending Projects</h2>
 					<div class="btn-grid">
 						<a href="/create.html"><button id="create" class="btn create-btn" >create</button></a>
-						<select class="sort-by">
-							<option value="0">sort by:</option>
-							<option value="date">Date</option>
-							<option value="title">Title</option>
-						</select>
+						
 					</div>
-					<ul id="display-projects">
+					<ul id="display-projects" aria-live="polite">
 					</ul>
 					<h2>Completed Projects</h2>
-					<ul id="display-completed-projects">
+					<ul id="display-completed-projects" aria-live="polite">
 					</ul>
-					<div class="error-message"></div>
+					<div class="error-message" aria-live="assertive"></div>
 				</div>
 			</section>
 			
@@ -44,6 +41,7 @@
  		 integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
  		 crossorigin="anonymous"></script>
 		<script src="/js/authentication.js" type="text/javascript"></script>
+		<script src="/js/login.js" type="text/javascript"></script>
 		<script src="/js/dashboard.js" type="text/javascript"></script>
 		
 	</body>

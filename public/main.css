@@ -145,7 +145,7 @@ h2 {
 }
 
 .error-message {
-	color: red;
+	color: #b50808;
 	font-weight: bold;
 	font-size: 20px;
 	text-align: center;

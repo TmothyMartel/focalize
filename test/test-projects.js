@@ -179,7 +179,8 @@ describe('Focalize project resource', () => {
 		it('should update fields you send over', () => {
 			const updateProject = {
 				title: faker.lorem.sentence(),
-				description: faker.lorem.paragraph()
+				description: faker.lorem.paragraph(),
+				client: faker.name.title()
 			};
 
 			return Projects

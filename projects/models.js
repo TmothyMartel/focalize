@@ -28,7 +28,7 @@ const ProjectSchema = mongoose.Schema({
     type: Boolean,
     default: false
   },
-  client: {type: String},
+  client: String,
   paymentAmount: {
     type: Number,
     default: 0
@@ -54,7 +54,6 @@ ProjectSchema.methods.serialize = function() {
   return {
     id: this._id,
     title: this.title,
-    //dueDate: this.dueDate.toDateString() || Date.now().toDateString(),
     dueDate: this.dateString,
     imageUrl: this.imageUrl || imagePath,
     description: this.description,

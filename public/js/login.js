@@ -1,5 +1,6 @@
 'use strict'
 
+
 function loginEventHandler() {
 	$('.login-form').on('submit', function(event) {
 		event.preventDefault();
@@ -12,9 +13,8 @@ function loginEventHandler() {
 				password
 			}),
 			error: function(error) {
-				// let errorLocation = error.responseJSON.location;
-				// let errorMessage = error.responseJSON.message;
-				// $('.error-message').html(`Oops! ${errorLocation}: ${errorMessage}`);
+				let errorMessage = "username or password incorrect!";
+				$('.error-message').html(`${errorMessage}`);
 				console.log('error', error);
 			},
 			success: function(data) {

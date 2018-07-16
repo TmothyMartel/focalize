@@ -1,7 +1,7 @@
 'use strict'
 
 let projectId;
-let paidProject = false;
+let paidProject;
 let updateId;
 let completed;
 
@@ -40,7 +40,12 @@ function populateFields(project) {
    $('#description').val(project.description);
    $('#notes').val(project.additionalNotes);
    $('.is-completed').html(completedQuestionRender());
-   if(!project.paidProject){$('#no').attr('checked')}
+    $('#client').val(project.client),
+    $('#amount').val(project.paymentAmount);
+    project.paidProject ?  $('#yes').attr('checked', 'checked') && $('.client-info').show() : $('#no').attr('checked', 'checked');
+    project.completed ?  $('#complete').attr('checked', 'checked') : $('#incomplete').attr('checked', 'checked')
+    // trueFalseChecker(project.paidProject, '#yes', '#no');
+    // trueFalseChecker(project.completed, '#complete', '#incomplete');
    console.log(project);
 }
 
@@ -50,7 +55,7 @@ function completedQuestionRender() {
         <label for="radio">Yes:</label>
         <input type="radio" id="complete" name="complete">
         <label>No:</label>
-        <input type="radio" id="incomplete" name="complete" checked>`
+        <input type="radio" id="incomplete" name="complete">`
 }
 
 function completeQuestionHandler() {
@@ -69,6 +74,16 @@ function markIncomplete() {
          completed = false;
     });
 }
+
+// // 
+// function trueFalseChecker(item, id1, id2) {
+//     if (item) {
+       
+//       project.paidProject ?  $(id1).attr('checked', 'checked');   
+//     } else {
+//         $(id2).attr('checked', 'checked');
+//     }
+// }
 
 
 function dateSelection() {
@@ -121,6 +136,7 @@ function createProject() {
         };
         if (updateId) {
             settings.url = `api/projects/${updateId}`,
+            settings.success = location.replace(`/project.html?projectId=${updateId}`)
             settings.type = 'PUT'
         }
         $.ajax(settings);
@@ -133,7 +149,7 @@ function radioHandlers () {
 }
 
 function yesRadioEventHandler() {
-    $('#yes').on('change', function() {
+    $('#yes').on('click', function() {
         $('.client-info').show();
          paidProject = true;
     });
