@@ -44,9 +44,6 @@ function populateFields(project) {
     $('#amount').val(project.paymentAmount);
     project.paidProject ?  $('#yes').attr('checked', 'checked') && $('.client-info').show() : $('#no').attr('checked', 'checked');
     project.completed ?  $('#complete').attr('checked', 'checked') : $('#incomplete').attr('checked', 'checked')
-    // trueFalseChecker(project.paidProject, '#yes', '#no');
-    // trueFalseChecker(project.completed, '#complete', '#incomplete');
-   console.log(project);
 }
 
 function completedQuestionRender() {
@@ -74,17 +71,6 @@ function markIncomplete() {
          completed = false;
     });
 }
-
-// // 
-// function trueFalseChecker(item, id1, id2) {
-//     if (item) {
-       
-//       project.paidProject ?  $(id1).attr('checked', 'checked');   
-//     } else {
-//         $(id2).attr('checked', 'checked');
-//     }
-// }
-
 
 function dateSelection() {
   $( "#datepicker" ).datepicker({
@@ -169,7 +155,6 @@ function handler() {
     getProject();
     radioHandlers();
     dateSelection();
-
 }
 
 $(handler);

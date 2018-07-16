@@ -10,7 +10,6 @@ if (!authToken) {
 function getSingleProject() {
 	let searchParams = new URLSearchParams(window.location.search)
 	projectId = searchParams.get('projectId')
-   	console.log(projectId)
 	$.ajax({
 			url: `/api/projects/${projectId}`,
 			error: function(error) {

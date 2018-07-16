@@ -7,7 +7,7 @@ function signupHandler() {
 		const lastName = $('#lastname').val();
 		const username = $('#username').val();
 		const password = $('#password').val();
-		console.log(username, password, firstName, lastName);
+
 		$.ajax({
 			url: "/api/users/",
 			data: JSON.stringify({
