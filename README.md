@@ -23,12 +23,12 @@ Focalize is your one stop to track all your current and past project. Just click
 ### attributions
 
 splash page imges by:
-carl heyerdahl
-suhyeon choi
-raw pixel
+carl heyerdahl,
+suhyeon choi,
+raw pixel, and
 mounzer awad
 from [unsplash](https://unsplash.com/)
 
-icons made by [mynamepong](href="https://www.flaticon.com/authors/mynamepong") from flaticon 
+planning icons made by [mynamepong](https://www.flaticon.com/authors/mynamepong) from flaticon 
 
-focus by Miguel C Balandrano from the Noun Project
+focus icon by Miguel C Balandrano from the Noun Project
