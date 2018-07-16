@@ -286,6 +286,7 @@ F********************/
 	color: gray;
 }
 
+.project-card-complete:hover, 
 .project-card:hover {
 	border: 2px solid #CA7CC2; 
 	background-color: #E8E4E4;
